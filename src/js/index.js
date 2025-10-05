@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const textArea = document.getElementById("description");
     const htmlCode = document.getElementById("html-code");
     const cssCode = document.getElementById("css-code");
+    const preview = document.getElementById("preview-section");
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setLoading(true);
 
         const url =
-          "https://jpfuz8ecpdzkt5536ep1az8p.hooks.n8n.cloud/webhook-test/gerador-fundo";
+          "http://[2804:6f0:209f:8b00::100]:5678/webhook/gerador-fundo";
         const payloadLogin = { description };
         const options = {
           method: "POST",
@@ -64,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Erro ao gerar o fundo: ", error);
         htmlCode.innerHTML = "";
         htmlCode.textContent =
-          "Não consegui gerar o código HTML, tente novamente";
+          "Não consegui gerar o código HTML, tente novamente, esse sistema requer ipv6";
         cssCode.textContent =
-          "Não consegui gerar o código CSS, tente novamente";
+          "Não consegui gerar o código CSS, tente novamente, esse sistema requer ipv6";
         preview.innerHTML = "";
       } finally {
         setLoading(false);
