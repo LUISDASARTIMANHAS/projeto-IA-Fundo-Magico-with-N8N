@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setLoading(true);
 
         const url =
-          "http://https://pinguinho.ddns.net:5678/webhook/gerador-fundo";
+          "https://pinguinho.ddns.net:5678/webhook/gerador-fundo";
         const payloadLogin = { description };
         const options = {
           method: "POST",
